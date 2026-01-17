@@ -14,8 +14,8 @@ public class ProductProcessor {
     @Autowired
     private GetAllProductsHandler getAllHandler;
 
-    // Cette méthode sera appelée par le Controller
-    public List<GetAllProductsOutput> getAll(GetAllProductsInput input) {
+    // Modifier la signature de la méthode
+    public GetAllProductsOutput getAll(GetAllProductsInput input) {
         return getAllHandler.handle(input);
     }
 }

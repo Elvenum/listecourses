@@ -6,6 +6,8 @@ import com.helha.listecourses.infrastructure.product.DbProduct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/products") // L'URL sera http://localhost:8080/api/products
 public class ProductCommandController {
@@ -16,5 +18,11 @@ public class ProductCommandController {
     @PostMapping // On utilise POST pour créer
     public DbProduct create(@RequestBody CreateProductInput input) {
         return processor.createHandler.handle(input);
+    }
+
+
+    @DeleteMapping("/{id}") // L'URL sera /api/products/1 (si l'ID est 1)
+    public void delete(@PathVariable Long id) {
+        processor.delete(id);
     }
 }

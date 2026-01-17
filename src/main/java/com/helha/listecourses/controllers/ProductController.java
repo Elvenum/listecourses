@@ -18,8 +18,7 @@ public class ProductController {
     private ProductProcessor processor;
 
     @GetMapping // Cette annotation dit que c'est une requête GET
-    public List<GetAllProductsOutput> getAll() {
-        // On crée un input vide comme dans Todo
+    public GetAllProductsOutput getAll() {
         return processor.getAll(new GetAllProductsInput());
     }
 }
