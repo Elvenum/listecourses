@@ -1,4 +1,4 @@
-package com.helha.listecourses.controllers;
+package com.helha.listecourses.controllers.product;
 
 import com.helha.listecourses.application.product.ProductProcessor;
 import com.helha.listecourses.application.product.query.getAll.GetAllProductsInput;
@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/products")
