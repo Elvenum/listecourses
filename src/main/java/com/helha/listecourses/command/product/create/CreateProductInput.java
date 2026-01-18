@@ -5,5 +5,6 @@ import lombok.Data;
 @Data
 public class CreateProductInput {
     private String name;
-    private String category;
+    private Long categoryId;
+    private Long storeId;
 }
