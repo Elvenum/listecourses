@@ -29,14 +29,17 @@ public class CreateProductHandler implements ICommandHandler<CreateProductInput,
 
     @Override
     public Product handle(CreateProductInput input) {
-        // 1. Transformation de base
-        DbProduct dbProduct = mapper.map(input, DbProduct.class);
+        // 1. On crée l'objet DbProduct manuellement ou on vide les IDs pour le mapper
+        DbProduct dbProduct = new DbProduct();
+        dbProduct.setName(input.getName());
+        // Si tu as d'autres champs simples (prix, quantité), ajoute-les ici :
+        // dbProduct.setPrice(input.getPrice());
 
-        // 2. On cherche la catégorie correspondante
+        // 2. On cherche la catégorie correspondante (TON CODE ÉTAIT BON ICI)
         if (input.getCategoryId() != null) {
             DbCategory category = categoryRepository.findById(input.getCategoryId())
                     .orElseThrow(() -> new RuntimeException("Catégorie inexistante"));
-            dbProduct.setCategory(category); // On fait le lien réel
+            dbProduct.setCategory(category);
         }
 
         // 3. On fait de même pour le magasin
@@ -46,8 +49,8 @@ public class CreateProductHandler implements ICommandHandler<CreateProductInput,
             dbProduct.setStore(store);
         }
 
-        // 4. Sauvegarde finale
+        // 4. Sauvegarde et conversion finale
         dbProduct = repository.save(dbProduct);
-        return mapper.map(dbProduct, Product.class);
+        return mapper.map(dbProduct, Product.class); // Ici le mapper ne risque rien
     }
 }

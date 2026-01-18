@@ -4,9 +4,11 @@ import com.helha.listecourses.infrastructure.category.DbCategory;
 import com.helha.listecourses.infrastructure.store.DbStore;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-    @Entity
+@Entity
     @Table(name="products")
+    @NoArgsConstructor
     @Data
     public class DbProduct {
         @Id

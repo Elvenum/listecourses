@@ -15,8 +15,8 @@ public class ProductController {
     @Autowired
     private ProductProcessor processor;
 
-    @GetMapping // Cette annotation dit que c'est une requête GET
-    public GetAllProductsOutput getAll() {
-        return processor.getAll(new GetAllProductsInput());
-    }
+//    @GetMapping // Cette annotation dit que c'est une requête GET
+//    public GetAllProductsOutput getAll() {
+//        return processor.getAll(new GetAllProductsInput());
+//    }
 }

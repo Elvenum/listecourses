@@ -7,7 +7,6 @@ import com.helha.listecourses.application.shopping.toggle.ToggleBoughtHandler;
 import com.helha.listecourses.application.shopping.toggle.ToggleBoughtInput;
 import com.helha.listecourses.command.shopping.CreateShoppingItemHandler;
 import com.helha.listecourses.command.shopping.CreateShoppingItemInput;
-import com.helha.listecourses.domain.ShoppingItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

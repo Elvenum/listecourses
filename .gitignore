@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+# Empêche d'envoyer les bibliothèques React
+**/node_modules/
+**/dist/
+.eslintcache
